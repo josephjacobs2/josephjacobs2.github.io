@@ -1,0 +1,17 @@
+body {
+    background-color: lightblue;
+    color: blue;
+    font-family: Arial;
+}
+#IntroParagraph {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#portrait {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
