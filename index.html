@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <title>Joseph's Portfolio</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <script src="scripts.js"></script>
 </head>
-<body>
+<body id="body">
     <h1>Joseph's CS 1430/JavaScript Portfolio</h1>
     <p id="IntroParagraph">
         Hello! My name is Joseph Jacobs. I'm a computer science major at Weber State University. I'm making this website to showcase what I'm learning in my CS 1430: Client-Side Programming course. Directly below this you'll find a picture of myself and bellow that you'll see some demonstrations of projects made with JavaScript. I really hope that you have an excellent rest of your day!
     </p>
     <img src="Assets\PXL_20250115_053439882.jpg" id="portrait" width="300px">
     <h1>JavaScript Demos</h1>
+    <h2 id="ButtonsStatus">Theme Buttons</h2>
     <p>
-        There's nothing to see here...
+        <button onclick="setLightTheme()">Set Light Theme</button>
+        <button onclick="setDarkTheme()">Set Dark Theme</button>
+        <button onclick="setDefaultTheme()">Set Back To Default Theme</button>
     </p>
 </body>
 </html>
