@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shape Area and Volume Calculator</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <h1>Geometry Calculator</h1>
+    <p>
+        This site allows you to calculate the area and perimeter of a circle, or the volume of a sphere. Simply input your radius below then select the button corresponding to what you'd like to see calculated.
+    </p>
+
+    <p>Radius (r): <input type="text" id = "RadiusInput"></p>
+
+    <h2 ID="PerimeterTitle">Perimeter = N/A</h2>
+    <img src="Assets/Perimeter.png">
+    <br>
+    <button onclick="calculatePerimeter()">Calculate Perimeter</button>
+
+    <h2 ID="AreaTitle">Area = N/A</h2>
+    <img src="Assets/Area.png">
+    <br>
+    <button onclick="calculateArea()">Calculate Area</button>
+
+    <h2 ID="VolumeTitle">Volume = N/A</h2>
+    <img src="Assets/Volume.png">
+    <br>
+    <button onclick="calculateVolume()">Calculate Volume</button>
+
+    <h2><a href = index.html>Back to Homepage</a></h2>
+</body>
+</html>
