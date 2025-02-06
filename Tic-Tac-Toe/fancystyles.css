@@ -1,0 +1,13 @@
+body {
+    background-color: lightblue;
+    color: blue;
+    font-family: Arial;
+}
+.TableButton {
+    background-color: darkviolet;
+    font-size: large;
+}
+#reset\ button {
+    width: 150px;
+    height: 30px;
+}
