@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Puzzle</title>
+  <style>
+    /* NOTE: Do NOT modify this stylesheet */
+    #puzzle {
+      width: 500px;
+      height: 500px;
+      border: 5px solid black;
+    }
+  </style>
+</head>
+<body>
+<!-- NOTE: Do NOT modify the body or div -->
+<div id='puzzle'></div>
+<script>
+
+  function colorChange(button) {
+    button.style.backgroundColor = "#4A2574";
+    let previous = button.previousElementSibling;
+    let next = button.nextElementSibling;
+
+    if (previous !== null) {
+      previous.style.backgroundColor = "#FF9E00"
+    }
+    if (next !== null) {
+      next.style.backgroundColor = "#FF9E00"
+    }
+  }
+
+  let divider = document.getElementById('puzzle');
+  divider.addEventListener('mouseover', () => {divider.style.border = "5px solid #FF9E00";});
+  divider.addEventListener('mouseout', () => {divider.style.border = "5px solid black";});
+  const table = document.createElement('table');
+  table.style.backgroundColor = "#7338A0";
+  for (let row = 0; row < 2; row++) {
+    const tr = document.createElement('tr');
+    tr.style.height = '247px';
+    tr.style.boarder = "none";
+    for (let col = 0; col < 2; col++) {
+      const td = document.createElement('td');
+      td.style.width = "250px";
+      td.style.boarder = "none";
+      if (col === 0 && row === 0) {
+        let colorAttributes = ["#9455F4", "#4A2B74", "#594492", "#854DDC"];
+        let innerTextAttributes = ["A","B","C","D"]
+        for (let i = 0; i < 4; ++i) {
+          let button = document.createElement('button');
+          button.style.height = "122px";
+          button.style.width = "123px";
+          button.style.backgroundColor = colorAttributes[i];
+          button.style.color = "white";
+          button.innerText = innerTextAttributes[i];
+          button.setAttribute('onclick', 'colorChange(this)')
+          td.appendChild(button);
+        }
+      }
+      if (col === 1 && row === 1) {
+        for (let i = 0; i < 100; ++i) {
+          let button = document.createElement('button');
+          button.style.height = "20px";
+          button.style.width = "24px";
+          button.style.backgroundColor = "#C39CFE";
+          button.setAttribute('onclick', 'colorChange(this)')
+          td.appendChild(button);
+        }
+      }
+      tr.appendChild(td);
+    }
+
+    table.appendChild(tr);
+  }
+  let description = document.createElement('p');
+  description.innerText = "This is a puzzle created entirely with JavaScript.";
+  let body = divider.parentElement;
+  body.appendChild(description);
+
+  let header = document.createElement('h1');
+  header.innerText = "DOM Puzzle";
+  body.insertBefore(header, divider);
+
+  document.getElementById('puzzle').appendChild(table);
+</script>
+</body>
+</html>
