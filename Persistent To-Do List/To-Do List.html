@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>To-Do List</h1>
+<p id = "listArea"></p>
+<form id = "todoForm">
+    <label for="addItem"></label>
+    <input id = "addItem" type = "text">
+    <button type = "submit">Add Item To List</button>
+</form>
+</body>
+<script>
+    document.getElementById("todoForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        let storedItems = localStorage.getItem("items");
+        console.log("Stored Items before object creation:" + storedItems);
+        if (storedItems === null) {
+            localStorage.setItem("items", "0")
+            storedItems = 0;
+        }
+
+        let newObject = {
+          ID: ++storedItems,
+          content: document.getElementById("addItem").value
+        }
+        console.log("Stored Items after object creation:" + storedItems);
+        console.log(newObject);
+    });
+</script>
+</html>
