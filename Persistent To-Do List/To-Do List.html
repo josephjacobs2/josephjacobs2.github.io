@@ -12,23 +12,10 @@
     <input id = "addItem" type = "text">
     <button type = "submit">Add Item To List</button>
 </form>
+<button onclick="localStorage.clear(); sessionStorage.clear(); updateList();">Clear Storage</button>
+<p id="sessionCounter"></p>
+<button onclick="changeTheme()">Change Theme</button>
+<p id="jokeSection"></p>
 </body>
-<script>
-    document.getElementById("todoForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-        let storedItems = localStorage.getItem("items");
-        console.log("Stored Items before object creation:" + storedItems);
-        if (storedItems === null) {
-            localStorage.setItem("items", "0")
-            storedItems = 0;
-        }
-
-        let newObject = {
-          ID: ++storedItems,
-          content: document.getElementById("addItem").value
-        }
-        console.log("Stored Items after object creation:" + storedItems);
-        console.log(newObject);
-    });
-</script>
+<script src="logic.js"></script>
 </html>
